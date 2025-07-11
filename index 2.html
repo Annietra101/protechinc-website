@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protech Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #0d1117;
+      color: #ffffff;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+      opacity: 0.08;
+      z-index: 0;
+      background-size: 300px 300px;
+      background-repeat: repeat;
+      animation: moveBg 60s linear infinite;
+    }
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 40%, rgba(0, 209, 255, 0.1), transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(15, 98, 254, 0.07), transparent 40%);
+      z-index: 0;
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes moveBg {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100px, -100px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.07;
+      }
+      50% {
+        opacity: 0.15;
+      }
+    }
+
+    header, .hero, .services {
+      position: relative;
+      z-index: 1;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0F62FE;
+    }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0F62FE;
+    }
+
+    .hero {
+      margin-top: 5rem;
+      max-width: 600px;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #c3c3c3;
+      margin-bottom: 2rem;
+    }
+    .cta {
+      background-color: #0F62FE;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .cta:hover {
+      background-color: #005eff;
+      transform: scale(1.05);
+    }
+
+    .services {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5rem;
+      gap: 2rem;
+    }
+    .card {
+      background-color: #161b22;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid #2c313a;
+      transform: translateY(40px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+    .card:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+    .card:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+    .card i {
+      font-size: 2rem;
+      color: #00d1ff;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #b0b0b0;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">PROTECH</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Design. Optimize. Manage.</h1>
+    <p>We provide web design, SEO services, and IT management.</p>
+    <button class="cta">Get Started</button>
+  </section>
+  <section class="services">
+    <div class="card">
+      <i class="fas fa-code"></i>
+      <h3>Web Design</h3>
+      <p>User-friendly and responsive websites tailored to your needs.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-chart-line"></i>
+      <h3>SEO Services</h3>
+      <p>Improve your search engine rankings and drive more traffic.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>IT Management</h3>
+      <p>Reliable IT solutions and support for your business.</p>
+    </div>
+  </section>
+</body>
+</html>
